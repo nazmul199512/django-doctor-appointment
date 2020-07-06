@@ -1,0 +1,99 @@
+.single-service {
+  position: relative;
+  z-index: 1;
+
+  img {
+    display: block;
+    margin-bottom: 15px;
+    max-height: 35px;
+  }
+
+  h6 {
+    color: $white;
+    @include transition-duration(500ms);
+    margin-bottom: 0;
+    font-weight: 400;
+    @media #{$breakpoint-lg} {
+      font-size: 13px;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    h6 {
+      color: $primary;
+    }
+  }
+}
+
+.single-service--area {
+  position: relative;
+  z-index: 1;
+
+  .icon-- {
+    position: relative;
+    z-index: 1;
+    @include transition-duration(500ms);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+
+    img {
+      position: absolute;
+      max-height: 35px;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+  }
+
+  h5 {
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  &:focus,
+  &:hover {
+    .icon-- {
+      box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.dento-video-area {
+  position: relative;
+  z-index: 1;
+
+  img {
+    width: 100%;
+  }
+
+  .video-play-button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: $white;
+    background-color: $primary;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+
+    &:focus,
+    &:hover {
+      background-color: $dark;
+      color: $white;
+    }
+  }
+}

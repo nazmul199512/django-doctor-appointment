@@ -1,0 +1,29 @@
+.dento-pricing-table-area {
+  position: relative;
+  z-index: 1;
+}
+
+.dento-price-table {
+  position: relative;
+  z-index: 1;
+
+  table thead tr > td,
+  table thead tr > th {
+    background-color: $primary;
+    color: $white;
+  }
+
+  table tr > td,
+  table tr > th {
+    padding: 15px 30px;
+    border-radius: 3px;
+    border: 4px solid $white;
+    background-color: $bg-gray;
+    font-weight: 600;
+    color: $text;
+    @media #{$breakpoint-xs} {
+      padding: 10px 15px;
+      font-size: 12px;
+    }
+  }
+}

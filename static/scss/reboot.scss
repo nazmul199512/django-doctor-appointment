@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $fonts;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fonts;
+  color: $heading;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+  color: $heading;
+  text-decoration: none;
+  @include transition-duration(500ms);
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  line-height: 1.9;
+  color: $text;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.bg-overlay {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.bg-gradient-overlay {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #2c455d;
+    background: -webkit-linear-gradient(to right, #2c455d, #00012c);
+    background: linear-gradient(to right, #2c455d, #00012c);
+    opacity: 0.85;
+  }
+}
+
+.bg-img {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jarallax {
+  position: relative;
+  z-index: 0;
+
+  > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+#success_fail_info {
+  margin-bottom: 30px;
+  color: $white;
+  text-align: center;
+}
+
+.mfp-iframe-holder .mfp-close {
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-color: $primary;
+  text-align: center;
+  right: 0;
+  padding-right: 0;
+  line-height: 32px;
+}

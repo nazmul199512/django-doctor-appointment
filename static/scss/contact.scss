@@ -1,0 +1,62 @@
+.dento-contact-area {
+  position: relative;
+  z-index: 1;
+
+  .google-maps {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 470px;
+    @media #{$breakpoint-xs} {
+      height: 280px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+.contact-information {
+  position: relative;
+  z-index: 1;
+  padding: 30px 50px;
+  background-color: $primary;
+  border-radius: 3px;
+  @media #{$breakpoint-xs} {
+    margin-bottom: 100px;
+  }
+
+  h5 {
+    color: $white;
+  }
+
+  p {
+    color: $white;
+  }
+}
+
+.contact-form {
+  position: relative;
+  z-index: 1;
+
+  .form-control {
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    font-size: 13px;
+    font-style: italic;
+
+    &:focus {
+      box-shadow: none;
+      border-color: $primary;
+    }
+  }
+
+  textarea.form-control {
+    height: 110px;
+    padding: 15px;
+  }
+}

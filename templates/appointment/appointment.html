@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Appointment List{% endblock %}
+
+
+
+{% block content %}
+
+    <section class="dentist-area section-padding-40-0">
+
+    <div class="container">
+
+
+      <div class="row">
+
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+
+
+            <h2>Your Appointments</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          {% for apt in appointment %}
+        <!-- Single Dentist Area -->
+        <div class="col-12 col-sm-6 col-md-4">
+
+          <div class="single-dentist-area mb-100">
+            <img  style="height: 500px; width: 600px" src="{{ apt.image.url }}" alt="">
+            <!-- Dentist Content -->
+            <div class="dentist-content">
+              <!-- Social Info -->
+              <div class="dentist-social-info">
+
+              </div>
+              <!-- Dentist Info -->
+              <div class="dentist-info bg-gradient-overlay">
+                <h5>{{ apt.full_name }}</h5>
+                <p>{{ apt.department }} Expert</p>
+                  <p>{{ apt.qualification_name }}, {{ apt.institute_name }}</p>
+                  <p>Available {{ apt.start_time }} to {{ apt.end_time }} in {{ apt.hospital_name }}</p>
+                  <p> AT {{ apt.location }}
+                      <i class="fa fa-trash-o" style="color: red" aria-hidden="true"></i>
+                      <a href="{% url 'appointment:delete-appointment' apt.id %}">Delete Appointment</a>
+                  </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

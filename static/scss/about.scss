@@ -1,0 +1,73 @@
+.single-skills-area {
+  position: relative;
+  z-index: 1;
+
+  h6 {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 12px;
+    @media #{$breakpoint-lg} {
+      font-size: 14px;
+    }
+    @media #{$breakpoint-md} {
+      font-size: 14px;
+    }
+    @media #{$breakpoint-xs} {
+      font-size: 14px;
+    }
+  }
+}
+
+.dento-border {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  background-color: $bg-gray;
+}
+
+.dento-cta-area {
+  position: relative;
+  z-index: 1;
+}
+
+.single-cta {
+  position: relative;
+  z-index: 1;
+
+  i {
+    font-size: 50px;
+    color: $primary;
+    margin-bottom: 15px;
+    display: block;
+    @media #{$breakpoint-md} {
+      font-size: 40px;
+    }
+  }
+
+  h2 {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 10px;
+    @media #{$breakpoint-md} {
+      font-size: 30px;
+    }
+    @media #{$breakpoint-xs} {
+      font-size: 30px;
+    }
+  }
+
+  h5 {
+    margin-bottom: 0;
+    font-size: 18px;
+    @media #{$breakpoint-lg} {
+      font-size: 16px;
+    }
+    @media #{$breakpoint-md} {
+      font-size: 16px;
+    }
+    @media #{$breakpoint-xs} {
+      font-size: 16px;
+    }
+  }
+}

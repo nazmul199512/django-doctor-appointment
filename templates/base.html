@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Dento - Dentist &amp; Medical HTML Template">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Docmed {% block title %} {% endblock %}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    {% block styles %} {% endblock %}
+
+</head>
+
+<body>
+   {% include 'nav.html' %}
+
+  <!-- ***** Header Area End ***** -->
+      {% block content %}
+  {% endblock  %}
+  <!-- ***** Welcome Area Start ***** -->
+
+  <!-- ***** Blog Area End ***** -->
+
+  <!-- ***** Footer Area Start ***** -->
+  <footer class="footer-area bg-img bg-gradient-overlay">
+    <div class="container">
+      <div class="row">
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-footer-widget">
+            <a href="./index.html" class="d-block mb-4"><img src="{% static 'img/logo1.png' %}" alt=""></a>
+
+            <div class="footer-contact">
+                 <p> We Believe Everyone Should Have Easy Access To Great Medical Care</p>
+              <p> Dhaka, Bangladesh</p>
+              <p> +88 01798128...</p>
+              <p> info.docmed@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg">
+          <div class="single-footer-widget">
+            <!-- Widget Title -->
+            <h5 class="widget-title">Opening Hours</h5>
+
+            <!-- Opening Hours -->
+            <ul class="opening-hours">
+              <li><span>Mon-Wed</span> <span>8.00 AM-10.00 PM</span></li>
+              <li><span>Thu-Fri</span> <span>8.00 AM-10.00 PM</span></li>
+              <li><span>Sat</span> <span>8.00 AM-10.00 PM</span></li>
+              <li><span>Sun</span> <span>8.00 AM-10.00 PM</span></li>
+              <li><span>Holiday</span> <span>Closed</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg">
+          <div class="single-footer-widget">
+            <!-- Widget Title -->
+            <h5 class="widget-title">Quick Link</h5>
+
+            <!-- Quick Links Nav -->
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Policy</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Advisors</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Dentist</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Legals</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Single Footer Widget -->
+        <div class="col-12 col-sm-6 col-lg">
+          <div class="single-footer-widget">
+            <!-- Widget Title -->
+            <h5 class="widget-title">Newsletter</h5>
+
+            <p>We will send out weekly newest article and some great offers</p>
+            <!-- Newsletter Form -->
+            <div class="footer-newsletter-form">
+              <form action="#" method="post">
+                <input type="email" name="nl-email" value="" placeholder="Email Address">
+                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+              </form>
+            </div>
+
+            <!-- Social Info -->
+            <div class="footer-social-info">
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="copywrite-content">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://docmed.com" target="_blank">Docmed</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ***** Footer Area End ***** -->
+
+  <!-- ******* All JS ******* -->
+  <!-- jQuery js -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <!-- Popper js -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap js -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- All js -->
+  <script src="{% static 'js/dento.bundle.js' %}"></script>
+  <!-- Active js -->
+  <script src="{% static 'js/default-assets/active.js' %}"></script>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   {% block javascripts %} {% endblock %}
+</body>
+
+</html>

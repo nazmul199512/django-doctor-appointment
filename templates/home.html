@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+    <section class="dentist-area section-padding-50-0">
+
+        <div class="container">
+
+
+<form id="job-main-form" method="get" action="{% url 'appointment:search' %}" class="search-doctor-form">
+                    <div class="row mb-5">
+
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <input type="text" id="location" name="location"
+                                   class="form-control form-control-lg" placeholder="Any Location ?  Ex : Uttara, Dhaka">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <select id="department" name="department" class="form-control">
+                                <option>Cardiology</option>
+                                <option>Dentistry</option>
+                                <option>ENT Specialists</option>
+                                <option>Astrology</option>
+                                <option>Neuroanatomy</option>
+                                <option>Blood Screening</option>
+                                <option>Eye Care</option>
+                                <option>Physical Therapy</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block text-black btn-search"><span
+                                    class="icon-search icon mr-2"></span>Search Doctor
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                         </br>
+
+                        <h3 class="lead">Available Doctors </h3>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                {% for apt in home %}
+                    <!-- Single Dentist Area -->
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="single-dentist-area mb-100">
+                            <img style="height: 500px; width: 600px" src="{{ apt.image.url }}" alt="">
+                            <!-- Dentist Content -->
+                            <div class="dentist-content">
+                                <!-- Social Info -->
+                                <div class="dentist-social-info">
+
+                                </div>
+                                <!-- Dentist Info -->
+                                <div class="dentist-info bg-gradient-overlay">
+                                    {% if request.user.is_authenticated and request.user.role == 'patient' %}
+                                        <h5>{{ apt.full_name }}</h5>
+                                        <p>{{ apt.department }} Expert</p>
+                                        <p>{{ apt.qualification_name }}, {{ apt.institute_name }}</p>
+                                        <p>Available {{ apt.start_time }} to {{ apt.end_time }}
+                                            in {{ apt.hospital_name }}</p>
+                                        <p>
+                                            AT {{ apt.location }} <i class="fa fa-th"></i>
+                                            <a href="{% url 'appointment:take-appointment' apt.id %}"> Take
+                                                Appointment</a>
+
+                                        </p>
+                                    {% elif request.user.is_authenticated and request.user.role == 'doctor'   %}
+
+                                        <h5>{{ apt.full_name }}</h5>
+                                        <p>{{ apt.department }} Expert</p>
+                                        <p>{{ apt.qualification_name }}, {{ apt.institute_name }}</p>
+                                        <p>Available {{ apt.start_time }} to {{ apt.end_time }}
+                                            in {{ apt.hospital_name }}</p>
+                                        <p>AT {{ apt.location }}</p>
+
+                                        {% else %}
+
+                                         <h5>{{ apt.full_name }}</h5>
+                                        <p>{{ apt.department }} Expert</p>
+                                        <p>{{ apt.qualification_name }}, {{ apt.institute_name }}</p>
+                                        <p>Available {{ apt.start_time }} to {{ apt.end_time }}
+                                            in {{ apt.hospital_name }}</p>
+                                        <p>
+                                            AT {{ apt.location }} <i class="fa fa-th"></i>
+                                            <a href="{% url 'appointment:take-appointment' apt.id %}"> Take
+                                                Appointment</a>
+
+
+
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+                <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+    </span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

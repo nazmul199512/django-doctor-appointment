@@ -1,0 +1,59 @@
+.dento-btn {
+  position: relative;
+  z-index: 1;
+  min-width: 170px;
+  height: 46px;
+  line-height: 42px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  border-radius: 2px;
+  background-color: $primary;
+  @include transition(all 500ms);
+  border: 2px solid $primary;
+  @media #{$breakpoint-xs} {
+    min-width: 120px;
+    padding: 0 10px;
+  }
+  @media #{$breakpoint-sm} {
+    min-width: 170px;
+    padding: 0 20px;
+  }
+
+  &.active,
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    background-color: transparent;
+    color: $primary;
+  }
+
+  &.btn-2 {
+    &:focus,
+    &:hover {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+
+  &.booking-btn {
+    color: $white !important;
+    font-weight: 600;
+    min-width: 140px;
+    height: 40px;
+    line-height: 36px;
+    font-size: 12px;
+
+    &:focus,
+    &:hover {
+      font-size: 12px;
+      font-weight: 600;
+      background-color: $white;
+      color: $primary !important;
+    }
+  }
+}

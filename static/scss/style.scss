@@ -1,0 +1,100 @@
+/* ---------------------------------------------
+[Master Stylesheet]
+
+Template Name: Dento - Dentist & Medical Template
+Template Author: Colorlib
+Version: 1.0.0
+Last Update: Dec 05, 2018
+
+---------------------------------------------
+[Tables of CSS Content]
+
++ body
+  - 1.0 Reboot CSS
+  - 2.0 Spacing CSS
+  - 3.0 Preloader CSS
+  - 4.0 Heading CSS
+  - 5.0 Back To Top CSS
+  - 6.0 Buttons CSS
+  - 7.0 Header CSS
+  - 8.0 Hero CSS
+  - 9.0 Testimoial CSS
+  - 10.0 Dentist CSS
+  - 11.0 Appointment CSS
+  - 12.0 Pricing CSS
+  - 13.0 Service CSS
+  - 14.0 About CSS
+  - 15.0 Barfiller CSS
+  - 16.0 Breadcrumb CSS
+  - 17.0 Blog CSS
+  - 18.0 Widget CSS
+  - 19.0 Footer CSS
+  - 20.0 Contact CSS
+
+  ---------------------------------------------
+  [Color Codes]
+
+  $heading: #333333; [Heading Color]
+  $text: #707070; [Text Color]
+  $bg-gray: #f4f4f4; [Gray Background]
+  $primary: #00aeef; [Primary Color]
+  $white: #ffffff; [White Color]
+  $dark: #000; [Dark Color]
+  $border: #7450fe; [Border Color]
+  $hover: #00aeef; [Hover Color]
+  $footer: #191c1d; [Footer Color]
+  $secondary: #222222; [Secondary Color]
+
+  ---------------------------------------------
+  [Font Family]
+
+  'Montserrat', sans-serif;
+--------------------------------------------- */
+
+/* Import Fonts & All CSS */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
+@import 'css/bootstrap.min.css';
+@import 'css/animate.css';
+@import 'css/default-assets/classy-nav.css';
+@import 'css/owl.carousel.min.css';
+@import 'css/magnific-popup.css';
+@import 'css/font-awesome.min.css';
+@import 'css/style.css';
+
+// **************
+// Utilities
+// **************
+@import "utilities/fonts";
+@import "utilities/variables";
+@import "utilities/responsive";
+@import "utilities/color";
+
+// *************
+// Mixins
+// *************
+@import "mixins/flex";
+@import "mixins/miscellaneous";
+
+// **************
+// Stylesheet
+// *************
+@import "reboot";
+@import "spacing";
+@import "preloader";
+@import "heading";
+@import "backtotop";
+@import "buttons";
+@import "header";
+@import "hero";
+@import "testimonial";
+@import "dentist";
+@import "appointment";
+@import "pricing";
+@import "service";
+@import "about";
+@import "barfiller";
+@import "breadcrumb";
+@import "blog";
+@import "widget";
+@import "footer";
+@import "contact";

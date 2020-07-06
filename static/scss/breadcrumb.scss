@@ -1,0 +1,74 @@
+.breadcumb-area {
+  position: relative;
+  z-index: 1;
+  height: 200px;
+  @media #{$breakpoint-xs} {
+    height: 130px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin-bottom: 0;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    @media #{$breakpoint-lg} {
+      font-size: 36px;
+    }
+    @media #{$breakpoint-md} {
+      font-size: 30px;
+    }
+    @media #{$breakpoint-xs} {
+      font-size: 24px;
+    }
+  }
+}
+
+.breadcumb--con {
+  .breadcrumb {
+    padding: 30px 0;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+
+    .breadcrumb-item,
+    .breadcrumb-item > a,
+    .breadcrumb-item.active {
+      font-size: 14px;
+      text-transform: capitalize;
+      color: $heading;
+      font-weight: 500;
+
+      &:focus,
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    .breadcrumb-item.active {
+      color: $text;
+
+      &:focus,
+      &:hover {
+        color: $text;
+      }
+    }
+
+    .page-item:first-child .page-link {
+      margin-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .page-item:last-child .page-link {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: "\f105";
+      font-family: 'FontAwesome';
+    }
+  }
+}

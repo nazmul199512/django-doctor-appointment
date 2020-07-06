@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Doctor Profile Edit{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <center> <h3>Edit Profile </h3></center>
+
+
+
+                    <form action="" method="POST">{% csrf_token %}
+                           {{ form|bootstrap }}
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Update" class="btn btn-primary btn-md text-white">
+                            </div>
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+{% endblock %}

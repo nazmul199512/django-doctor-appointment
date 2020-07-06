@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Appointment Delete{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <center>
+                    <h4 class="highlight">Are you sure you want to delete {{ object.full_name }}'s Appointment?</h4>
+
+                </center>
+                <form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+
+                    <img style="height: 400px; width: 450px" src="{{ object.image.url }}" alt="">
+                    </br>
+                    </br>
+                    <center><input class="btn btn-danger" type="submit" value="Delete">
+                    </center>
+
+
+                </form>
+                </br>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

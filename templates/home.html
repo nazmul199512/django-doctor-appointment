@@ -101,10 +101,7 @@
                                         <p>Available {{ apt.start_time }} to {{ apt.end_time }}
                                             in {{ apt.hospital_name }}</p>
                                         <p>
-                                            AT {{ apt.location }} <i class="fa fa-th"></i>
-                                            <a href="{% url 'appointment:take-appointment' apt.id %}"> Take
-                                                Appointment</a>
-
+                                            AT {{ apt.location }} </p>
 
 
                                     {% endif %}

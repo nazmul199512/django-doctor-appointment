@@ -8,6 +8,16 @@ Doctor appointment application using django
 #### Local : Sqlite
 #### Live : postgresql
 
-## Screen Shot
+## Screen Shots
+
+### Search Doctor
 
 ![](Capture.PNG)
+
+### Doctor Registration
+
+![](Capture1.PNG)
+
+### Patient Registration
+
+![](Capture2.PNG)

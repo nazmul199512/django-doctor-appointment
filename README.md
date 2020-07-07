@@ -7,3 +7,7 @@ Doctor appointment application using django
 ### DATABASE
 #### Local : Sqlite
 #### Live : postgresql
+
+## Screen Shot
+
+![](Capture.PNG)

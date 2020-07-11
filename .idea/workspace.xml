@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af9e7b39-43b7-4501-956a-3efda9a68d11" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/doctor_appointment_system.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Capture.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appointment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/appointment_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/appointment_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/patient_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/patient_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/take_appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/take_appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +91,7 @@
       <workItem from="1594331495185" duration="17668000" />
       <workItem from="1594385401117" duration="18770000" />
       <workItem from="1594488084032" duration="63000" />
-      <workItem from="1594488883336" duration="6332000" />
+      <workItem from="1594488883336" duration="7672000" />
     </task>
     <servers />
   </component>

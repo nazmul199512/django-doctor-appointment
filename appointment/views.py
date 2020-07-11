@@ -13,6 +13,11 @@ from accounts.forms import PatientProfileUpdateForm, DoctorProfileUpdateForm
 from .forms import CreateAppointmentForm, TakeAppointmentForm
 from .models import Appointment, TakeAppointment
 
+"""
+For Patient Profile
+    
+"""
+
 
 class EditPatientProfileView(UpdateView):
     model = User
@@ -40,6 +45,35 @@ class EditPatientProfileView(UpdateView):
         if obj is None:
             raise Http404("Patient doesn't exists")
         return obj
+
+
+class TakeAppointmentView(CreateView):
+    template_name = 'appointment/take_appointment.html'
+    form_class = TakeAppointmentForm
+    extra_context = {
+        'title': 'Take Appointment'
+    }
+    success_url = reverse_lazy('appointment:home')
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            return reverse_lazy('accounts:login')
+        if self.request.user.is_authenticated and self.request.user.role != 'patient':
+            return reverse_lazy('accounts:login')
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(TakeAppointmentView, self).form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        self.object = None
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
 
 """
@@ -169,50 +203,3 @@ class SearchView(ListView):
     def get_queryset(self):
         return self.model.objects.filter(location__contains=self.request.GET['location'],
                                          department__contains=self.request.GET['department'])
-
-
-    """
-     Test
-    """
-
-"""
-class TakeAppointmentView(CreateView):
-    model = TakeAppointment
-    form_class = TakeAppointmentForm
-    template_name = 'appointment/take_appointment.html'
-    success_url = reverse_lazy('appointment:home')
-"""
-
-
-class TakeAppointmentView(CreateView):
-    template_name = 'appointment/take_appointment.html'
-    form_class = TakeAppointmentForm
-    extra_context = {
-        'title': 'Take Appointment'
-    }
-    success_url = reverse_lazy('appointment:home')
-
-    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
-    def dispatch(self, request, *args, **kwargs):
-        if not self.request.user.is_authenticated:
-            return reverse_lazy('accounts:login')
-        if self.request.user.is_authenticated and self.request.user.role != 'patient':
-            return reverse_lazy('accounts:login')
-        return super().dispatch(self.request, *args, **kwargs)
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(TakeAppointmentView, self).form_valid(form)
-
-    def post(self, request, *args, **kwargs):
-        self.object = None
-        form = self.get_form()
-        if form.is_valid():
-            return self.form_valid(form)
-        else:
-            return self.form_invalid(form)
-
-
-
-
-

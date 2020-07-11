@@ -12,7 +12,6 @@ class CreateAppointmentForm(forms.ModelForm):
         self.fields['hospital_name'].label = "Hospital Name"
         self.fields['qualification_name'].label = "Qualification"
         self.fields['institute_name'].label = "Institute"
-        self.fields['created_at'].label = "Created At"
 
         self.fields['full_name'].widget.attrs.update(
             {
@@ -62,9 +61,8 @@ class CreateAppointmentForm(forms.ModelForm):
 
     class Meta:
         model = Appointment
-        exclude = ('user',)
         fields = ['full_name', 'image', 'department', 'start_time', 'end_time', 'location',
-                  'hospital_name', 'qualification_name', 'institute_name', 'created_at']
+                  'hospital_name', 'qualification_name', 'institute_name']
 
     def is_valid(self):
         valid = super(CreateAppointmentForm, self).is_valid()
@@ -84,31 +82,37 @@ class CreateAppointmentForm(forms.ModelForm):
 class TakeAppointmentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(TakeAppointmentForm, self).__init__(*args, **kwargs)
-        self.fields['full_name'].label = " Full Name"
-
-        self.fields['date'].label = "Date"
+        self.fields['appointment'].label = "Choose Your Doctor"
+        self.fields['full_name'].label = "Full Name"
+        self.fields['phone_number'].label = "Phone Number"
         self.fields['message'].label = "Message"
 
-        self.fields['full_name'].widget.attrs.update(
+        self.fields['appointment'].widget.attrs.update(
             {
-                'placeholder': 'Enter Full Name',
+                'placeholder': 'Choose Your Doctor',
             }
         )
 
-        self.fields['date'].widget.attrs.update(
+        self.fields['full_name'].widget.attrs.update(
             {
-                'placeholder': 'Enter Date',
+                'placeholder': 'Write Your Name',
+            }
+        )
+
+        self.fields['phone_number'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Phone Number',
             }
         )
         self.fields['message'].widget.attrs.update(
             {
-                'placeholder': 'Short note about your problem',
+                'placeholder': 'Write a short message',
             }
         )
 
     class Meta:
         model = TakeAppointment
-        fields = ['full_name', 'date', 'message']
+        fields = ['appointment', 'full_name', 'phone_number', 'message']
 
     def is_valid(self):
         valid = super(TakeAppointmentForm, self).is_valid()
@@ -119,7 +123,7 @@ class TakeAppointmentForm(forms.ModelForm):
         return valid
 
     def save(self, commit=True):
-        t_appointment = super(TakeAppointmentForm, self).save(commit=False)
+        appointment = super(TakeAppointmentForm, self).save(commit=False)
         if commit:
-            t_appointment.save()
-        return t_appointment
+            appointment.save()
+        return appointment

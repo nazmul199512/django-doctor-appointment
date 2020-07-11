@@ -2,11 +2,60 @@
 {% load static %}
 {% block title %}Patient List{% endblock %}
 
-
-
 {% block content %}
+    <section class="dentist-area section-padding-50-0">
+
+        <div class="container" style="align-items: center; justify-content: center;display: flex;">
+            <div class="col-12 col-sm-6 col-md-4">
+
+                <h3 style="align-items: center;justify-content: center;display: flex"> {{ request.user.first_name }}'s
+                    Patient/s</h3>
+
+                </br >
+                </br >
+            </div>
+
+        </div>
+
+    </section>
 
 
+    <section class="dentist-area section-padding-30-0">
 
+        <div class="container">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for patient in patients %}
+                    <tr>
+
+                        <td>{{ patient.full_name }}</td>
+                        <td> {{ patient.phone_number }}</td>
+                        <td> {{ patient.message }}</td>
+                        <td> {{ patient.date }}</td>
+                        <td>
+
+                            <a href="{% url 'appointment:delete-patient' patient.id %}">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </section>
 
 {% endblock %}

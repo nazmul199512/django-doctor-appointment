@@ -1,29 +1,17 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
+from django.utils import timezone
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from accounts.models import User
 from .decorators import user_is_patient, user_is_doctor
-from django.views.generic import TemplateView, UpdateView, CreateView, ListView, DeleteView, View
+from django.views.generic import TemplateView, UpdateView, CreateView, ListView, DetailView, DeleteView
 from django.views.generic.edit import DeleteView, UpdateView
-from accounts.forms import PatientProfileUpdateForm , DoctorProfileUpdateForm
+from accounts.forms import PatientProfileUpdateForm, DoctorProfileUpdateForm
 from .forms import CreateAppointmentForm, TakeAppointmentForm
 from .models import Appointment, TakeAppointment
-
-
-class HomePageView(ListView):
-    paginate_by = 9
-    model = Appointment
-    context_object_name = 'home'
-    template_name = "home.html"
-
-    def get_queryset(self):
-        return self.model.objects.all().order_by('-id')
-
-
-class ServiceView(TemplateView):
-    template_name = 'appointment/service.html'
 
 
 class EditPatientProfileView(UpdateView):
@@ -52,6 +40,11 @@ class EditPatientProfileView(UpdateView):
         if obj is None:
             raise Http404("Patient doesn't exists")
         return obj
+
+
+"""
+   For Doctor Profile
+"""
 
 
 class EditDoctorProfileView(UpdateView):
@@ -111,10 +104,92 @@ class AppointmentCreateView(CreateView):
             return self.form_invalid(form)
 
 
+class AppointmentListView(ListView):
+    model = Appointment
+    template_name = 'appointment/appointment.html'
+    context_object_name = 'appointment'
+
+    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
+    @method_decorator(user_is_doctor)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(self.request, *args, **kwargs)
+
+    def get_queryset(self):
+        return self.model.objects.filter(user_id=self.request.user.id).order_by('-id')
+
+
+class PatientListView(ListView):
+    model = TakeAppointment
+    context_object_name = 'patients'
+    template_name = "appointment/patient_list.html"
+
+    def get_queryset(self):
+        return self.model.objects.filter(appointment__user_id=self.request.user.id)
+
+
+class PatientDeleteView(DeleteView):
+    model = TakeAppointment
+    success_url = reverse_lazy('appointment:patient-list')
+
+
+class AppointmentDeleteView(DeleteView):
+    """
+       For Delete any Appointment created by Doctor
+    """
+    model = Appointment
+    success_url = reverse_lazy('appointment:doctor-appointment')
+
+
+"""
+   For both Profile
+   
+"""
+
+
+class HomePageView(ListView):
+    paginate_by = 9
+    model = Appointment
+    context_object_name = 'home'
+    template_name = "home.html"
+
+    def get_queryset(self):
+        return self.model.objects.all().order_by('-id')
+
+
+class ServiceView(TemplateView):
+    template_name = 'appointment/service.html'
+
+
+class SearchView(ListView):
+    paginate_by = 6
+    model = Appointment
+    template_name = 'appointment/search.html'
+    context_object_name = 'appointment'
+
+    def get_queryset(self):
+        return self.model.objects.filter(location__contains=self.request.GET['location'],
+                                         department__contains=self.request.GET['department'])
+
+
+    """
+     Test
+    """
+
+"""
+class TakeAppointmentView(CreateView):
+    model = TakeAppointment
+    form_class = TakeAppointmentForm
+    template_name = 'appointment/take_appointment.html'
+    success_url = reverse_lazy('appointment:home')
+"""
+
+
 class TakeAppointmentView(CreateView):
     template_name = 'appointment/take_appointment.html'
     form_class = TakeAppointmentForm
-
+    extra_context = {
+        'title': 'Take Appointment'
+    }
     success_url = reverse_lazy('appointment:home')
 
     @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
@@ -138,63 +213,6 @@ class TakeAppointmentView(CreateView):
             return self.form_invalid(form)
 
 
-class AppointmentListView(ListView):
-    model = Appointment
-    template_name = 'appointment/appointment.html'
-    context_object_name = 'appointment'
-
-    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
-    @method_decorator(user_is_doctor)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(self.request, *args, **kwargs)
-
-    def get_queryset(self):
-        return self.model.objects.filter(user_id=self.request.user.id).order_by('-id')
 
 
-class PatientListView(ListView):
-    model = TakeAppointment
-    context_object_name = 'patient'
-    template_name = "appointment/patient_list.html"
 
-    def get_queryset(self):
-        return self.model.objects.filter(appointment_id=self.request.user.id).order_by('-id')
-
-
-class ApplicantPerJobView(ListView):
-    model = TakeAppointment
-    template_name = 'appointment/patient_list.html'
-    context_object_name = 'patients'
-
-    @method_decorator(login_required(login_url=reverse_lazy('accounts:login')))
-    @method_decorator(user_is_doctor)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(self.request, *args, **kwargs)
-
-    def get_queryset(self):
-        return TakeAppointment.objects.filter(appointment_id=self.kwargs['appointment_id']).order_by('id')
-
-    def get_context_data(self, **kwargs):
-        context = {}
-        context = super().get_context_data(**kwargs)
-        context['appointment'] = Appointment.objects.get(id=self.kwargs['appointment_id'])
-        return context
-
-
-class AppointmentDeleteView(DeleteView):
-    """
-       For Delete any Appointment created by Doctor
-    """
-    model = Appointment
-    success_url = reverse_lazy('appointment:doctor-appointment')
-
-
-class SearchView(ListView):
-    paginate_by = 6
-    model = Appointment
-    template_name = 'appointment/search.html'
-    context_object_name = 'appointment'
-
-    def get_queryset(self):
-        return self.model.objects.filter(location__contains=self.request.GET['location'],
-                                         department__contains=self.request.GET['department'])

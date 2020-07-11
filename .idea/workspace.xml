@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="af9e7b39-43b7-4501-956a-3efda9a68d11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/doctor_appointment_system.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capture.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointment/appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/appointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointment/appointment_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/appointment_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointment/patient_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/patient_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointment/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointment/take_appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/take_appointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Nazmul\Desktop\Dev\dr_care\src\doctor_appointment_system\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1e9IfQTHA6gCOleK4mrixotJxtK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nazmul\Desktop\Dev\dr_care\src\doctor_appointment_system\static" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="doctor_appointment_system" type="Python.DjangoServer" factoryName="Django server">
+      <module name="doctor_appointment_system" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af9e7b39-43b7-4501-956a-3efda9a68d11" name="Default Changelist" comment="" />
+      <created>1593727484824</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593727484824</updated>
+      <workItem from="1593727487024" duration="6985000" />
+      <workItem from="1593781791520" duration="10635000" />
+      <workItem from="1593870825479" duration="23224000" />
+      <workItem from="1593957960886" duration="20338000" />
+      <workItem from="1594042253115" duration="5024000" />
+      <workItem from="1594067639424" duration="10587000" />
+      <workItem from="1594132595478" duration="3236000" />
+      <workItem from="1594331495185" duration="17668000" />
+      <workItem from="1594385401117" duration="18770000" />
+      <workItem from="1594488084032" duration="63000" />
+      <workItem from="1594488883336" duration="6332000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="350" y="51" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593875368049">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="350" y="51" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1593875368049" />
+    <state x="413" y="61" key="FileChooserDialogImpl" timestamp="1594488148663">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="61" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594488148663" />
+    <state x="314" y="146" key="com.intellij.ide.util.TipDialog" timestamp="1594488128904">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="314" y="146" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1594488128904" />
+    <state x="234" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594410436934">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="234" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1594410436934" />
+  </component>
+</project>

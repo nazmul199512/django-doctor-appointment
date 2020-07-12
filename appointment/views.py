@@ -158,7 +158,7 @@ class PatientListView(ListView):
     template_name = "appointment/patient_list.html"
 
     def get_queryset(self):
-        return self.model.objects.filter(appointment__user_id=self.request.user.id)
+        return self.model.objects.filter(appointment__user_id=self.request.user.id).order_by('-id')
 
 
 class PatientDeleteView(DeleteView):

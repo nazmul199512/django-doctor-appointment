@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 
 {% block content %}
 
-    <section class="dentist-area section-padding-50-0">
 
-        <div class="container">
+    <div class="breadcumb-area bg-img bg-gradient-overlay"  style="background-image: url('{% static 'img/bg-img/13.jpg' %}');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
 
-
-
-                <form id="job-main-form" method="get" action="" class="search-doctor-form">
+             <form id="job-main-form" method="get" action="" class="search-doctor-form">
                     <div class="row mb-5">
 
 
                         <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
                             <input type="text" id="location" name="location"
-                                   class="form-control form-control-lg" placeholder="Uttara, Dhaka">
+                                   class="form-control form-control-lg" placeholder="Any Location ?  Ex : Uttara, Dhaka">
                         </div>
 
                         <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
@@ -41,6 +42,22 @@
                         </div>
                     </div>
                 </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <section class="dentist-area section-padding-50-0">
+
+        <div class="container">
+
+
+
+
 
 
 

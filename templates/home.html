@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 {% load static %}
 
 
@@ -7,12 +7,23 @@
 
 {% block content %}
 
-    <section class="dentist-area section-padding-50-0">
+    <!-- ***** Welcome Area Start ***** -->
+  <section class="welcome-area">
+    <!-- Welcome Slides -->
+    <div class="welcome-slides owl-carousel">
+      <!-- Single Welcome Slide -->
+      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax"  style="background-image: url('{% static 'img/bg-img/1.jpg' %}');">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <h2 data-animation="fadeInUp" data-delay="100ms">We Believe Everyone Should Have Easy Access To Great Health Care</h2>
 
-        <div class="container">
 
+                <div class="welcome-btn-group">
 
-<form id="job-main-form" method="get" action="{% url 'appointment:search' %}" class="search-doctor-form">
+                    <form id="job-main-form" method="get" action="{% url 'appointment:search' %}" class="search-doctor-form">
                     <div class="row mb-5">
 
 
@@ -45,6 +56,79 @@
                         </div>
                     </div>
                 </form>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Welcome Slide -->
+      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax"  style="background-image: url('{% static 'img/bg-img/3.jpg' %}');">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <h2 data-animation="fadeInDown" data-delay="100ms">We Believe Everyone Should Have Easy Access To Great Health Care</h2>
+                <div class="welcome-btn-group">
+
+                    <form id="job-main-form" method="get" action="{% url 'appointment:search' %}" class="search-doctor-form">
+                    <div class="row mb-5">
+
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <input type="text" id="location" name="location"
+                                   class="form-control form-control-lg" placeholder="Any Location ?  Ex : Uttara, Dhaka">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+
+
+                            <select id="department" name="department" class="form-control">
+                                <option style="display: none;" >Select Your Service</option>
+                                <option>Cardiology</option>
+                                <option>Dentistry</option>
+                                <option>ENT Specialists</option>
+                                <option>Astrology</option>
+                                <option>Neuroanatomy</option>
+                                <option>Blood Screening</option>
+                                <option>Eye Care</option>
+                                <option>Physical Therapy</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block text-black btn-search"><span
+                                    class="icon-search icon mr-2"></span>Search Doctor
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <section class="dentist-area section-padding-35-0">
+
+        <div class="container">
+
 
 
             <div class="row">

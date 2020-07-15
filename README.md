@@ -12,7 +12,8 @@ Doctor appointment application using django
 
 ### Search Doctor
 
-![](Capture.PNG)
+![](12.PNG)
+![](13.PNG)
 
 ### Doctor Registration
 

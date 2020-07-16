@@ -2,7 +2,7 @@
 
 Doctor appointment application using django
 
-### Live : [Demo](https://docmed-13.herokuapp.com/)
+### Live : [Demo](https://docmed-11.herokuapp.com/)
 
 ### DATABASE
 #### Local : Sqlite
